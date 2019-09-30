@@ -161,7 +161,7 @@ void wifi_wakeup(void)
 
 /*----------------------------------------------------------------------------*/
 
-int16_t wifi_tcp_client_open(SlSockAddrIn_t* socket_address, bool blocking)
+int16_t wifi_tcp_client_open(SlSockAddrIn_t* socket_address)
 {
     int16_t status;
     int16_t socket_id;
@@ -183,11 +183,8 @@ int16_t wifi_tcp_client_open(SlSockAddrIn_t* socket_address, bool blocking)
         return status;
     }
 
-    if (!blocking)
-    {
-        SlSockNonblocking_t enableOption = {.NonblockingEnabled = true,};
-        sl_SetSockOpt(socket_id, SOL_SOCKET, SL_SO_NONBLOCKING, &enableOption, sizeof(enableOption));
-    }
+    SlSockNonblocking_t enableOption = {.NonblockingEnabled = true,};
+    sl_SetSockOpt(socket_id, SOL_SOCKET, SL_SO_NONBLOCKING, &enableOption, sizeof(enableOption));
 
     return socket_id;
 }

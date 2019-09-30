@@ -218,7 +218,6 @@ static void board_init_buttons(void)
     MAP_GPIO_clearInterruptFlag(BUTTON2_PORT, BUTTON2_PIN);
     MAP_GPIO_enableInterrupt(BUTTON2_PORT, BUTTON2_PIN);
 
-    MAP_Interrupt_setPriority(INT_PORT1, 0xA0);
     MAP_Interrupt_enableInterrupt(INT_PORT1);
 }
 /*----------------------------------------------------------------------------*/

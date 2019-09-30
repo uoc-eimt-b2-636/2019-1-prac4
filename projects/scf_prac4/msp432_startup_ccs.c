@@ -52,12 +52,10 @@ extern void SystemInit(void);
 extern unsigned long __STACK_END;
 
 /* External declarations for the interrupt handlers used by the application. */
-extern void PORT1_IRQHandler(void);
 extern void PORT2_IRQHandler(void);
 extern void EUSCIA0_IRQHandler(void);
 extern void EUSCIB1_IRQHandler(void);
 extern void DMA_INT1_IRQHandler(void);
-extern void TA1_0_IRQHandler(void);
 
 /* External declarations for the FreeRTOS interrupt handlers. */
 extern void xPortSysTickHandler( void );
@@ -95,7 +93,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* COMP1 ISR                 */
     defaultISR,                             /* TA0_0 ISR                 */
     defaultISR,                             /* TA0_N ISR                 */
-	TA1_0_IRQHandler,                             /* TA1_0 ISR                 */
+	defaultISR,                             /* TA1_0 ISR                 */
     defaultISR,                             /* TA1_N ISR                 */
 	defaultISR,                             /* TA2_0 ISR                 */
     defaultISR,                             /* TA2_N ISR                 */
@@ -120,7 +118,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* DMA_INT2 ISR              */
     DMA_INT1_IRQHandler,                    /* DMA_INT1 ISR              */
     defaultISR,                             /* DMA_INT0 ISR              */
-    PORT1_IRQHandler,                       /* PORT1 ISR                 */
+	defaultISR,                             /* PORT1 ISR                 */
 	PORT2_IRQHandler,                       /* PORT2 ISR                 */
     defaultISR,                             /* PORT3 ISR                 */
     defaultISR,                             /* PORT4 ISR                 */

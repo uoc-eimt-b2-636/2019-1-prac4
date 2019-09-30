@@ -47,7 +47,7 @@ int32_t wifi_restore(void);
 void wifi_sleep(void);
 void wifi_wakeup(void);
 
-int16_t wifi_tcp_client_open(SlSockAddrIn_t* socket_address, bool blocking);
+int16_t wifi_tcp_client_open(SlSockAddrIn_t* socket_address);
 int16_t wifi_tcp_client_send(int16_t socket_id, uint8_t* buffer, uint16_t length);
 int16_t wifi_tcp_client_receive(int16_t socket_id, uint8_t* buffer, uint16_t length);
 

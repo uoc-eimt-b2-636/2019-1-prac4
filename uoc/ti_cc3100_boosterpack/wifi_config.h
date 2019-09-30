@@ -34,8 +34,8 @@
 
 /*----------------------------------------------------------------------------*/
 
-#define DEFAULT_SSID            ""
-#define DEFAULT_SEC_KEY         ""
+#define DEFAULT_SSID            "MOVISTAR_9D44"
+#define DEFAULT_SEC_KEY         "JAyPhPB0KTOTv18URuJa"
 #define DEFAULT_SEC_TYPE        SL_SEC_TYPE_WPA_WPA2
 
 #define SSID_NAME               ( DEFAULT_SSID )
